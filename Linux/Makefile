@@ -16,11 +16,11 @@ help:
 	@echo ""   1. make master       - flash a new master sd card for the cluster
 	@echo ""   2. make node       - flash a new sd card for the cluster
 
-master: hypriot CL_MASTER_NAME cp_master_name add_node_name IMG DEVICE flashmaster
+master: hypriotimg CL_MASTER_NAME cp_master_name add_node_name IMG DEVICE flashmaster
 
-node: rm_node_name hypriot NODE_NAME add_node_name IMG DEVICE flash
+node: rm_node_name hypriotimg NODE_NAME add_node_name IMG DEVICE flash
 
-wifi: hypriot WIFI_NETWORK WIFI_NETWORK_PASSWORD NODE_NAME IMG DEVICE wififlash rm_node_name
+wifi: hypriotimg WIFI_NETWORK WIFI_NETWORK_PASSWORD NODE_NAME IMG DEVICE wififlash rm_node_name
 
 ui: dockerui
 
@@ -112,11 +112,11 @@ add_node_name:
 
 # Download the image
 
-hypriot:
+hypriotimg:
 	wget -c https://downloads.hypriot.com/hypriot-rpi-20151128-152209-docker-swarm-cluster.img.zip
 	unzip hypriot-rpi-20151128-152209-docker-swarm-cluster.img.zip
-	echo `pwds`/hypriot-rpi-20151128-152209-docker-swarm-cluster.img > IMG
-	echo date -I>hypriot
+	echo `pwd`/hypriot-rpi-20151128-152209-docker-swarm-cluster.img > IMG
+	echo date -I>hypriotimg
 
 # This section is all about setting some values that we don't want to commit, so each should also be in .gitignore
 
