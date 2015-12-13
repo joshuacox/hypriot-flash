@@ -112,10 +112,11 @@ add_node_name:
 
 # Download the image
 
-hypriot: hypriot-rpi-20151128-152209-docker-swarm-cluster.img.zip
-
-hypriot-rpi-20151128-152209-docker-swarm-cluster.img.zip:
+hypriot:
 	wget -c https://downloads.hypriot.com/hypriot-rpi-20151128-152209-docker-swarm-cluster.img.zip
+	unzip hypriot-rpi-20151128-152209-docker-swarm-cluster.img.zip
+	echo `pwds`/hypriot-rpi-20151128-152209-docker-swarm-cluster.img > IMG
+	echo date -I>hypriot
 
 # This section is all about setting some values that we don't want to commit, so each should also be in .gitignore
 
