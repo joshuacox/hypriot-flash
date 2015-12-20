@@ -161,7 +161,7 @@ MY_NET:
 	done ;
 
 clean:
-	-@rm -f NODE_NAME NODE2_NAME CL_MASTER CL_MASTER_NAME IMG serveindex DEVICE mkoverlay
+	-@rm -f NODE_NAME NODE2_NAME CL_MASTER CL_MASTER_NAME IMG serveindex DEVICE mkoverlay master dockeruipull
 
 fullclean:
-	-@rm -f NODE_NAME NODE2_NAME MY_NET WIFI_NETWORK WIFI_NETWORK_PASSWORD CL_MASTER CL_MASTER_NAME IMG serveindex DEVICE mkoverlay
+	-@rm -f NODE_NAME NODE2_NAME MY_NET WIFI_NETWORK WIFI_NETWORK_PASSWORD CL_MASTER CL_MASTER_NAME IMG serveindex DEVICE mkoverlay master dockeruipull

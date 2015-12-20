@@ -15,3 +15,5 @@ mkoverlay
 serveindex
 dockeruipull
 hypriotimg
+DOCKER_OPTS
+NODE_RESTRICTION
