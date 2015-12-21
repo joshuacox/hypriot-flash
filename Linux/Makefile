@@ -83,7 +83,7 @@ mkoverlay:
 	docker -H $(CL_MASTER):2378 network create -d overlay `cat MY_NET`
 	date -I>mkoverlay
 
-dockernetworkls:
+ls:
 	$(eval CL_MASTER := $(shell cat CL_MASTER))
 	docker -H $(CL_MASTER):2378 network ls
 
@@ -109,6 +109,10 @@ cp_master_name:
 
 add_node_name:
 	cat NODE_NAME>>NODE_NAMES
+
+local-base:
+	$(eval CL_MASTER := $(shell cat CL_MASTER))
+	ssh root@$(CL_MASTER) "curl https://raw.githubusercontent.com/joshuacox/local-base/master/bootstrapbase.sh|bash"
 
 # Download the image
 
